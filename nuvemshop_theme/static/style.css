@@ -944,7 +944,8 @@ footer {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--black);
+    color: var(--gold);
+    /* Mudado para dourado para visibilidade */
 }
 
 /* Responsive Updates */
