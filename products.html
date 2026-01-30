@@ -113,6 +113,30 @@
         </div>
     </footer>
 
+    <!-- Cart Drawer (Menu Lateral do Carrinho) -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h3>Sua Sacola</h3>
+            <button class="close-cart" id="closeCart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-drawer-content" id="cartItems">
+            <!-- Itens do carrinho aparecem aqui -->
+            <div class="cart-empty-msg">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <p>Sua sacola está vazia</p>
+            </div>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-total-info">
+                <span>Subtotal:</span>
+                <span id="cartSubtotal">R$ 0,00</span>
+            </div>
+            <button class="btn btn-primary w-100 py-3" onclick="window.location.href='https://wa.me/5511999999999'">FINALIZAR PEDIDO</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+
     <!-- Toast Notification -->
     <div id="toast" class="toast">Produto adicionado ao carrinho!</div>
 
