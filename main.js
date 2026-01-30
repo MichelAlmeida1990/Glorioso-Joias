@@ -463,6 +463,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.replace('fa-xmark', 'fa-bars');
             }
         });
+
+        // Fechar menu ao clicar em um link
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) icon.classList.replace('fa-xmark', 'fa-bars');
+            });
+        });
+
+        // Fechar menu ao clicar fora dele
+        document.addEventListener('click', (e) => {
+            if (mainNav.classList.contains('active') && !mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
+                mainNav.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) icon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        });
     }
 
     // Cart Logic
