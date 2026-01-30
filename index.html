@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glorioso Joias | Elegância e Sofisticação</title>
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="topber">
+            <p>Frete Grátis para todo o Brasil nas compras acima de R$ 299,00</p>
+        </div>
+        <div class="main-header container">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Buscar...">
+            </div>
+
+            <!-- Hamburger Menu Button -->
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo3.png" alt="Glorioso Joias">
+                </a>
+            </div>
+
+            <div class="header-actions">
+                <a href="#"><i class="fa-regular fa-user"></i> <span>Minha Conta</span></a>
+                <a href="#" class="cart-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <ul class="container">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="products.html?category=finas">Correntes Finas</a></li>
+                <li><a href="products.html?category=medias">Correntes Médias</a></li>
+                <li><a href="products.html?category=grossas">Correntes Grossas</a></li>
+                <li><a href="products.html?category=feminina">Coleção Feminina</a></li>
+                <li><a href="products.html?category=masculino">Linha Masculina</a></li>
+                <li><a href="products.html?category=kits">Kits</a></li>
+                <li><a href="products.html?category=pingentes">Pingentes</a></li>
+                <li><a href="#" class="highlight">Lançamentos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>Joias de Alta Qualidade</h1>
+            <p>Elegância, sofisticação e durabilidade em cada peça. Descubra nossa coleção premium.</p>
+            <div class="hero-buttons">
+                <a href="products.html" class="btn btn-primary">Ver Tudo</a>
+                <a href="products.html?category=kits" class="btn btn-outline">Kits Especiais</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories container section-padding">
+        <div class="section-header text-center">
+            <h2>Navegue por Categorias</h2>
+            <div class="divider"></div>
+            <p>Encontre a joia que mais combina com você</p>
+        </div>
+        
+        <div class="categories-grid">
+            <a href="products.html?category=finas" class="category-item">
+                <div class="img-circle placeholder-corrente-fina"></div>
+                <span>Correntes Finas</span>
+                <small>Ver Produtos</small>
+            </a>
+            <a href="products.html?category=medias" class="category-item">
+                <div class="img-circle placeholder-corrente-media"></div>
+                <span>Correntes Médias</span>
+                <small>Ver Produtos</small>
+            </a>
+            <a href="products.html?category=grossas" class="category-item">
+                <div class="img-circle placeholder-corrente-grossa"></div>
+                <span>Correntes Grossas</span>
+                <small>Ver Produtos</small>
+            </a>
+            <a href="products.html?category=feminina" class="category-item featured">
+                <div class="img-circle" style="background-image: url('assets/feminina/colar_medalha_milagrosa_produto.webp');"></div>
+                <span>Coleção Feminina</span>
+                <small>Ver Seleção</small>
+            </a>
+            <a href="products.html?category=masculino" class="category-item">
+                <div class="img-circle" style="background-image: url('assets/feminina/pulseira_infantil_menino.webp');"></div>
+                <span>Linha Masculina</span>
+                <small>Ver Produtos</small>
+            </a>
+            <a href="products.html?category=pingentes" class="category-item">
+                <div class="img-circle placeholder-pingentes"></div>
+                <span>Pingentes</span>
+                <small>Ver Produtos</small>
+            </a>
+            <a href="products.html?category=kits" class="category-item">
+                <div class="img-circle placeholder-kits"></div>
+                <span>Kits Especiais</span>
+                <small>Ver Ofertas</small>
+            </a>
+        </div>
+    </section>
+
+    <!-- Nossos Destaques Home -->
+    <section class="products-section section-padding" id="destaques-home">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Nossos Destaques</h2>
+                <div class="divider"></div>
+                <p>Peças selecionadas para você brilhar</p>
+            </div>
+            
+            <div class="products-grid" id="destaques-grid-home">
+                <!-- Destaques mistos via JS -->
+            </div>
+
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="products.html" class="btn btn-outline">Ver Loja Completa</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features / Trust -->
+    <section class="features">
+        <div class="container features-grid">
+            <div class="feature-box">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Envio Rápido</h3>
+                <p>Para todo o Brasil com segurança</p>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-credit-card"></i>
+                <h3>Parcele em até 6x</h3>
+                <p>Sem juros no cartão de crédito</p>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-gem"></i>
+                <h3>Qualidade Premium</h3>
+                <p>Garantia de 1 ano no banho</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter section-padding">
+        <div class="container text-center">
+            <h3>Fique por dentro das novidades</h3>
+            <p>Cadastre-se e ganhe 10% de desconto na primeira compra.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Seu melhor e-mail">
+                <button type="submit" class="btn btn-dark">Cadastrar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <img src="assets/logo2.png" alt="Glorioso Joias" class="footer-logo" style="filter: invert(1); max-width: 150px;">
+                <p>Joias exclusivas com design sofisticado e qualidade incomparável.</p>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Política de Troca</a></li>
+                    <li><a href="#">Garantia</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Pagamento</h4>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-solid fa-barcode"></i>
+                    <i class="fa-brands fa-pix"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <p>&copy; 2026 Glorioso Joias. Todos os direitos reservados.</p>
+            <p style="font-size: 0.8rem; margin-top: 5px;">Design inspirado em Matri Joias</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Produto adicionado ao carrinho!</div>
+
+    <script src="main.js"></script>
+</body>
+</html>
