@@ -485,17 +485,116 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Cart Logic
-    let cartCount = 0;
+    let cart = JSON.parse(localStorage.getItem('glorioso_cart')) || [];
     const cartCountElement = document.querySelector('.cart-count');
     const toast = document.getElementById('toast');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const cartOverlay = document.getElementById('cartOverlay');
+    const closeCartBtn = document.getElementById('closeCart');
+    const cartItemsContainer = document.getElementById('cartItems');
+    const cartSubtotalElement = document.getElementById('cartSubtotal');
+    const cartIcons = document.querySelectorAll('.cart-icon');
+
+    // Inicializar contador
+    updateCartUI();
+
+    function updateCartUI() {
+        if (cartCountElement) {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+        renderCartItems();
+        localStorage.setItem('glorioso_cart', JSON.stringify(cart));
+    }
+
+    function renderCartItems() {
+        if (!cartItemsContainer) return;
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = `
+                <div class="cart-empty-msg">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <p>Sua sacola está vazia</p>
+                </div>
+            `;
+            if (cartSubtotalElement) cartSubtotalElement.textContent = 'R$ 0,00';
+            return;
+        }
+
+        let subtotal = 0;
+        cartItemsContainer.innerHTML = cart.map((item, index) => {
+            subtotal += item.price * item.quantity;
+            return `
+                <div class="cart-item py-3 border-bottom border-secondary d-flex align-items-center gap-3">
+                    <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border: 1px solid #333;">
+                    <div class="flex-grow-1">
+                        <h4 style="font-size: 0.9rem; margin: 0; color: #fff;">${item.name}</h4>
+                        <p style="color: var(--gold); font-size: 0.85rem; margin: 5px 0;">${item.quantity}x R$ ${item.price.toFixed(2).replace('.', ',')}</p>
+                    </div>
+                    <button onclick="removeFromCart(${index})" style="background:none; border:none; color:#666; cursor:pointer;">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+            `;
+        }).join('');
+
+        if (cartSubtotalElement) {
+            cartSubtotalElement.textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+        }
+    }
 
     window.addToCart = function(productName, price) {
-        cartCount++;
-        if (cartCountElement) {
-            cartCountElement.textContent = cartCount;
+        // Encontrar imagem do produto nos dados
+        let productImage = 'assets/logo3.png';
+        for (let cat in products) {
+            const p = products[cat].find(item => item.name === productName);
+            if (p) {
+                productImage = p.image;
+                break;
+            }
         }
-        showToast(`${productName} adicionado ao carrinho!`);
+
+        const existingItem = cart.find(item => item.name === productName);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ name: productName, price: price, quantity: 1, image: productImage });
+        }
+
+        updateCartUI();
+        showToast(`${productName} adicionado à sacola!`);
+        openCart();
     };
+
+    window.removeFromCart = function(index) {
+        cart.splice(index, 1);
+        updateCartUI();
+    };
+
+    function openCart() {
+        if (cartDrawer && cartOverlay) {
+            cartDrawer.classList.add('active');
+            cartOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll
+        }
+    }
+
+    function closeCart() {
+        if (cartDrawer && cartOverlay) {
+            cartDrawer.classList.remove('active');
+            cartOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
+    if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
+    cartIcons.forEach(icon => {
+        icon.addEventListener('click', (e) => {
+            e.preventDefault();
+            openCart();
+        });
+    });
 
     function showToast(message) {
         if (!toast) return;
