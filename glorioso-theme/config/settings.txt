@@ -1,0 +1,52 @@
+title: Tema Premium Glorioso Joias
+
+# Definições de cores que o usuário pode mudar no painel
+colors:
+    primary_color:
+        label: Cor Primária (Dourado)
+        type: color
+        default: "#D4AF37"
+    bg_color:
+        label: Cor de Fundo
+        type: color
+        default: "#0A0A0A"
+    text_color:
+        label: Cor do Texto
+        type: color
+        default: "#FFFFFF"
+
+# Seleção de fontes
+fonts:
+    heading_font:
+        label: Fonte dos Títulos
+        type: font
+        default: "Playfair Display"
+    body_font:
+        label: Fonte do Corpo
+        type: font
+        default: "Montserrat"
+
+# Configurações do Slideshow da Home
+home_slideshow:
+    slide1_image:
+        label: Imagem do Slide 1
+        type: image
+    slide1_title:
+        label: Título do Slide 1
+        type: text
+        default: "Joias de Alta Qualidade"
+    slide2_image:
+        label: Imagem do Slide 2
+        type: image
+
+# Redes Sociais
+social_networks:
+    instagram:
+        label: Instagram URL
+        type: text
+    facebook:
+        label: Facebook URL
+        type: text
+    whatsapp:
+        label: Número do WhatsApp
+        type: text

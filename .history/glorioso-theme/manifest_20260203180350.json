@@ -1,0 +1,7 @@
+{
+  "name": "Glorioso Joias",
+  "version": "1.0.0",
+  "author": "Michel Almeida",
+  "description": "Tema personalizado para Glorioso Joias",
+  "main": "layouts/layout.tpl"
+}

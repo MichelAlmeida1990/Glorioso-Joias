@@ -1,0 +1,37 @@
+UPLOAD - Glorioso Joias (Nuvemshop) — Passo a passo
+
+1) Preparação
+- Confirme que o arquivo a enviar é `glorioso-theme.zip` (contendo pastas: `layouts/`, `templates/`, `snipplets/`, `static/`, `config/`, `assets/`).
+- Verifique que não haja espaços ou parênteses em nomes de arquivos em `assets/`.
+
+2) Fazer upload via painel (recomendado)
+- Acesse o Painel da sua loja → **Layout** → **Personalizar meu layout** (ou Menu Layout → Meus temas).
+- Procure a opção **Adicionar tema / Enviar tema** ou **Enviar layout**.
+- Selecione `glorioso-theme.zip` e confirme o envio.
+- Aguarde o upload e a conclusão do processamento.
+
+3) Publicar e testar
+- Depois do upload, selecione o tema e clique em **Publicar/Ativar** (ou use o modo rascunho para testar antes).
+- No painel do tema, configure: **Logo**, **Cores**, **Fontes** e **Slides** conforme `config/settings.txt`.
+- Abra a loja publicamente e teste: Home, Categoria, Produto, Busca, Carrinho e Checkout (desktop e mobile).
+
+4) Verificações essenciais (após publicar)
+- Console do navegador (F12) → Console e Rede: procurar por 404 (imagens) ou erros JS.
+- Verifique se `style.css` e `scripts.js` estão carregando sem erros (em `layouts/layout.tpl` há as tags para ambos).
+- Teste links do menu, breadcrumbs e imagens das categorias/produtos.
+
+5) Como reverter/atualizar
+- Para atualizar arquivos individuais, use o editor **Editar HTML/CSS** (Personalização avançada) e substitua apenas os arquivos necessários.
+- Para uma atualização completa, envie novamente o ZIP (recomendado renomear o ZIP com versão, ex: `glorioso-theme-v1.1.zip`) e publique.
+
+6) Problemas comuns e soluções rápidas
+- Imagem 404: subir a imagem faltante para `assets/` com o mesmo nome (sem espaços).
+- CSS não aplicado: confirme a linha `{{ 'style.css' | static_url | css_tag }}` em `layouts/layout.tpl`.
+- JS não funcionando: confirme `{{ 'scripts.js' | static_url | script_tag }}` em `layouts/layout.tpl` e abra o console para ver erros.
+
+7) Dicas finais
+- Teste em mobile e desktop; limpe cache ao verificar mudanças (CTRL+F5).
+- Se for parceiro/usuário avançado, considere usar o acesso Código-fonte / FTP ou a CLI da Nuvemshop para deploys automáticos.
+
+Contato
+- Se desejar, posso preparar instruções para upload via CLI ou revisar a loja após publicação.
